@@ -1,5 +1,6 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { CommonModule } from '@angular/common';
 import { CompanyFormComponent } from './company/company-form/company-form.component';
 import { MaterialModule } from '../material/material.module';
@@ -10,6 +11,7 @@ import { PerformanceCard2Component } from './performance-card2/performance-card2
 import { ProgressBarA1Component } from './progress-bar-a1/progress-bar-a1.component';
 import {ProgressBarColor} from './progress-bar-a1/progress-a1-bar-color';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { RadioButtonComponent } from './radio-button/radio-button.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
     PerformanceCard2Component,
     ProgressBarComponent,
     ProgressBarA1Component,
-    ProgressBarColor
+    ProgressBarColor,
+    BarChartComponent,
+    RadioButtonComponent
 
 
   ],
@@ -38,6 +42,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
     PerformanceCard2Component,
     ProgressBarComponent,
     ProgressBarA1Component,
+    BarChartComponent
 
   ]
 })
