@@ -1,9 +1,11 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import {BarChartConfigModel, BarChartDataModel} from '../widget-app/bar-chart/bar-chart-model';
 import { PerformanceCard1ConfigModel, PerformanceCard1DataModel } from '../widget-app/performace-card1/performance-card1-model';
 import { PerformanceCard2ConfigModel, PerformanceCard2DataModel } from '../widget-app/performance-card2/performance-card2-model';
 import {ProgressA1ConfigModel, ProgressA1Model} from '../widget-app/progress-bar-a1/progress-a1-model';
 import { ProgressBarConfigModel, ProgressBarDataModel } from '../widget-app/progress-bar/progress-bar-model';
+import {RadioButtonConfigModel, RadioButtonDataModel} from '../widget-app/radio-button/radio-button-model';
 
 import { AppRepoHelperService } from 'src/app/services/common/app-repo-helper.service';
 import { EventActionService } from 'src/app/services/common/event-action.service';
@@ -33,6 +35,12 @@ import { WidgetPageBase } from '../widget-utility/widget-page-base';
 export class DashboardComponent extends WidgetPageBase
 implements OnInit, AfterViewInit, OnDestroy {
   // [x: string]: any;
+
+  radioButtonConfigModel?:RadioButtonConfigModel;
+  radioButtonDataModel?:RadioButtonDataModel;
+
+  barChartConfigModel?:BarChartConfigModel;
+  barChartDataModel?:BarChartDataModel;
 
   progressA1ConfigModel?:ProgressA1ConfigModel;
   progressA1Model?:ProgressA1Model;
@@ -124,6 +132,12 @@ implements OnInit, AfterViewInit, OnDestroy {
     this.pageprop = Object();
     this.pageInstance = this;
 
+    this.radioButtonConfigModel=RadioButtonConfigModel.getInstance();
+    this.radioButtonDataModel=RadioButtonDataModel.getInstance();
+
+    this.barChartConfigModel=BarChartConfigModel.getInstance();
+    this.barChartDataModel=BarChartDataModel.getInstance();
+
     this.progressA1ConfigModel=ProgressA1ConfigModel.getInstance();
     this.progressA1Model=ProgressA1Model.getInstance();
 
@@ -194,6 +208,9 @@ implements OnInit, AfterViewInit, OnDestroy {
    ngOnInit(): void {
 // this.bindProgressA1Model();
 
+    this.bindRadioButtonDataModel();
+
+    this.bindBarChartDataModel();
 
     this.bindProgressBarDataModel();
     this.bindProgressBarDataModel2();
@@ -223,6 +240,12 @@ implements OnInit, AfterViewInit, OnDestroy {
 
     // this.bindPerformanceCard1ConfigModel();
   }
+  bindRadioButtonDataModel() {
+
+  }
+  bindBarChartDataModel() {
+
+  }
 
   // bindProgressA1Model() {
   //   this.ProgressA1Model.data=[
@@ -230,6 +253,7 @@ implements OnInit, AfterViewInit, OnDestroy {
   //     {"actualvalue":"Adf","title":"asdfas","barcolor":"Red"},
   //   ]
   // }
+
 
 
   bindProgressBarDataModel()
@@ -456,5 +480,8 @@ implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     super.removeListeners();
   }
+
+
+
 
 }
